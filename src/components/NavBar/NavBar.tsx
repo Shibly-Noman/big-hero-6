@@ -23,7 +23,7 @@ import Link from "next/link";
 import Image from "next/image";
 //   import { UserButton } from '../UserButton/UserButton';
 import ThemeToggler from "../ThemeToggler/ThemeToggler";
-import classes from "./NavBar.module.css";
+// import classes from "./NavBar.module.css";
 
 const links = [
   { icon: IconTerminal2, label: "Prompt", link: "/" }, // notifications: 3
@@ -59,15 +59,15 @@ export default function NavBar() {
     >
       <UnstyledButton
         key={link.label}
-        className={classes.mainLink}
+        className="mainLink"
         style={{ paddingBottom: "10px" }}
       >
-        <div className={classes.mainLinkInner}>
-          <link.icon size={20} className={classes.mainLinkIcon} stroke={1.5} />
+        <div className="mainLinkInner">
+          <link.icon size={20} className="mainLinkIcon" stroke={1.5} />
           <span>{link.label}</span>
         </div>
         {link.notifications && (
-          <Badge size="sm" variant="filled" className={classes.mainLinkBadge}>
+          <Badge size="sm" variant="filled" className="mainLinkBadge" >
             {link.notifications}
           </Badge>
         )}
@@ -76,8 +76,8 @@ export default function NavBar() {
   ));
 
   return (
-    <nav className={classes.navbar}>
-      <div className={classes.section}>
+    <nav className="navbar">
+      <div className="section">
         {/* <UserButton /> */}
         <div style={{
           display: 'flex',
@@ -97,8 +97,8 @@ export default function NavBar() {
           <ThemeToggler />
         </div>
       </div>
-      <div className={classes.section}>
-        <div className={classes.mainLinks}>{mainLinks}</div>
+      <div className="section">
+        <div className="mainLinks">{mainLinks}</div>
       </div>
     </nav>
   );
